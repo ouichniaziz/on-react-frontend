@@ -1,0 +1,252 @@
+/* CSS in one file just from demo purposes */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 50px;
+  color: gray;
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bloc {
+  /* width: 50%; */
+  flex-basis: calc(100% / 2 - (1rem * 2 / 3));
+  height: 550px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border: 1px solid gray;
+  overflow-y: auto;
+}
+
+.watch {
+  display: flex;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+}
+
+.watch .container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.watch .container-serie {
+  width: 100%;
+}
+
+.bloc__series-watch .bloc__series-infos {
+  padding-right: 12px;
+}
+
+.bloc__series-watch {
+  display: flex;
+  align-items: center;
+}
+
+.bloc__series-watch .bloc__series-img img {
+  width: 100px;
+}
+
+.bloc__container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.bloc__label {
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.bloc__container.list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bloc__container button,
+.bloc__container .bloc__series-infos button,
+.watch button {
+  background-color: rgb(234, 233, 233);
+  color: gray;
+  border: 0;
+  padding: 4px 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.bloc__input {
+  border: none;
+  margin-top: 8px;
+}
+
+.bloc__input input {
+  width: 100%;
+  padding: 12px 0 12px 8px;
+  font-size: 1rem;
+  color: gray;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat right 15px center;
+  font-weight: normal;
+}
+
+.bloc__series {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  margin-top: 12px;
+  gap: 12px;
+}
+
+.bloc__series-img img {
+  width: 92px;
+}
+
+.bloc__series-infos {
+  padding-left: 12px;
+}
+
+.bloc__series-infos-summary {
+  font-size: 0.6rem;
+}
+
+.bloc__series-infos-checkbox {
+  margin-left: auto;
+  height: 20px;
+  width: 20px;
+}
+
+.bloc__series button {
+  background-color: rgb(234, 233, 233);
+  color: gray;
+  border: 0;
+  padding: 4px 8px;
+  font-size: 1rem;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.bloc__series button.inactive {
+  background-color: rgb(94, 94, 94);
+  cursor: not-allowed;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    display: block;
+  }
+  .bloc {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .bloc__series-watch .bloc__series-infos {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 975px) {
+  .watch {
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .watch .container-serie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bloc__series-watch .bloc__series-img img {
+    width: 100px;
+  }
+
+  .bloc__series-watch .bloc__series-infos {
+    font-size: 0.6rem;
+  }
+
+  .bloc__series-watch .bloc__series-infos > div {
+    line-height: 1;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 565px) {
+  body {
+    padding: 12px;
+  }
+
+  .bloc__series {
+    font-size: 0.6rem;
+    gap: 8px;
+  }
+
+  .bloc__series-img img {
+    width: 64px;
+  }
+
+  .bloc__series-infos {
+    padding-left: 4px;
+  }
+
+  .bloc__series button,
+  .bloc__container.list button {
+    font-size: 0.8rem;
+  }
+
+  .watch {
+    flex-direction: column;
+  }
+
+  .watch .container-serie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bloc__series-watch .bloc__series-img img {
+    width: 100px;
+  }
+
+  .bloc__series-watch .bloc__series-infos {
+    font-size: 0.6rem;
+  }
+
+  .bloc__series-watch .bloc__series-infos > div {
+    line-height: 1;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 400px) {
+  .bloc__series {
+    font-size: 0.5rem;
+  }
+
+  .bloc__series button,
+  .bloc__container.list button {
+    font-size: 0.7rem;
+  }
+}
