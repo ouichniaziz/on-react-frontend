@@ -18,12 +18,7 @@ export const Serie = ({
   const selectSerieId = myListIds?.find(
     (serieId) => serieId.id === serie.show?.id
   );
-  /**
-   * Todo: fix any
-   */
-  const summary: any = {
-    __html: serie?.show?.summary,
-  };
+  const summary = serie.show?.summary.replace(/<\/?p>/gi, "");
 
   /**
    * Add serie to my list (default: unselected/false)
@@ -68,11 +63,8 @@ export const Serie = ({
         <p>{serie.show?.runtime || 0} min</p>
         <p>{serie.show?.rating?.average}</p>
         <p>{serieYear}</p>
-        {isWatchList && summary ? (
-          <div
-            className="bloc__series-infos-summary"
-            dangerouslySetInnerHTML={summary}
-          />
+        {isWatchList ? (
+          <p className="bloc__series-infos-summary">{summary}</p>
         ) : null}
       </div>
       {isWatchList ? null : !isMyList ? (
