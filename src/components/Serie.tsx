@@ -18,7 +18,7 @@ export const Serie = ({
   const selectSerieId = myListIds?.find(
     (serieId) => serieId.id === serie.show?.id
   );
-  const summary = serie.show?.summary.replace(/<[^>]*>/gi, "");
+  const summary = serie.show?.summary?.replace(/<[^>]*>/gi, "");
 
   /**
    * Add serie to my list (default: unselected/false)
@@ -61,7 +61,7 @@ export const Serie = ({
       <div className="bloc__series-infos">
         <h3>{serie.show?.name}</h3>
         <p>{serie.show?.runtime || 0} min</p>
-        <p>{serie.show?.rating?.average}</p>
+        <p>{serie.show?.rating.average}</p>
         <p>{serieYear}</p>
         {isWatchList ? (
           <p className="bloc__series-infos-summary">{summary}</p>
