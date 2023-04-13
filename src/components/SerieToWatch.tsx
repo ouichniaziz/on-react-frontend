@@ -13,7 +13,7 @@ export const SerieToWatch = ({ myListIds = [] }: SerieToWatchProps) => {
   const [randomSerieIndex, setRandomSerieIndex] = useState(
     Math.floor(Math.random() * selectedSeries?.length)
   );
-  const randomSerieId = selectedSeries[randomSerieIndex];
+  const randomSerieId = selectedSeries[randomSerieIndex] || selectedSeries[0];
   const serieData = getSerieQueryData(randomSerieId);
 
   const randomizeIndex = () => {

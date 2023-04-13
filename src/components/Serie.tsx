@@ -1,5 +1,5 @@
 type SerieProps = {
-  serie: Serie | undefined;
+  serie: Serie;
   setMyListIds?: React.Dispatch<React.SetStateAction<SerieIds[] | undefined>>;
   myListIds?: SerieIds[];
   isMyList?: boolean;
