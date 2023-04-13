@@ -10,10 +10,7 @@ const getSeriesSearch = async (search: string): Promise<Serie[]> => {
   return res.json();
 };
 
-export const getSerie = async (id: number): Promise<any[]> => {
-  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
-  return res.json();
-};
+
 
 export const getSeriesBySearch = (search: string) => {
   const query = useQuery({

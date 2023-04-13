@@ -1,6 +1,5 @@
-import { useQueries } from "@tanstack/react-query";
-import { getSerie } from "../hooks/getSeriesBySearch";
 import { Serie } from "./Serie";
+import { getSeriesQueries } from "../hooks/getSeriesQueries";
 
 type SerieListProps = {
   myListIds: SerieIds[];
@@ -12,14 +11,7 @@ export const SeriesList = ({
   setMyListIds,
 }: SerieListProps) => {
   const seriesIds = myListIds.map((serie) => serie.id);
-  const seriesQueries = useQueries({
-    queries: seriesIds?.map((id) => {
-      return {
-        queryKey: ["series", id],
-        queryFn: () => getSerie(id),
-      };
-    }),
-  });
+  const seriesQueries = getSeriesQueries(seriesIds);
   const seriesQueriesData = seriesQueries.map((serie: any) => ({
     show: serie.data,
   }));
