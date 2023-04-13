@@ -31,9 +31,7 @@ export const SerieToWatch = ({ myListIds = [] }: SerieToWatchProps) => {
       <div className="container-serie">
         {selectedSeries.length > 0 && serieData.show ? (
           <Serie myListIds={myListIds} serie={serieData} isWatchList />
-        ) : (
-          <p></p>
-        )}
+        ) : null}
       </div>
     </div>
   );
