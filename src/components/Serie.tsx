@@ -18,7 +18,7 @@ export const Serie = ({
   const selectSerieId = myListIds?.find(
     (serieId) => serieId.id === serie.show?.id
   );
-  const summary = serie.show?.summary.replace(/<\/?p>/gi, "");
+  const summary = serie.show?.summary.replace(/<[^>]*>/gi, "");
 
   /**
    * Add serie to my list (default: unselected/false)
