@@ -9,14 +9,14 @@ type SerieProps = {
 export const Serie = ({
   serie,
   setMyListIds,
-  myListIds = [],
+  myListIds,
   isMyList,
   isWatchList,
 }: SerieProps) => {
-  const serieYear = serie?.show?.premiered?.split("-")[0];
+  const serieYear = serie.show?.premiered?.split("-")[0];
   const seriesIds = myListIds?.map((serie) => serie.id);
   const selectSerieId = myListIds?.find(
-    (serieId) => serieId.id === serie?.show?.id
+    (serieId) => serieId.id === serie.show?.id
   );
   /**
    * Todo: fix any
@@ -57,16 +57,16 @@ export const Serie = ({
       <div className="bloc__series-img">
         <img
           src={
-            serie?.show?.image?.medium ??
+            serie.show?.image?.medium ??
             "https://media.istockphoto.com/id/1252582562/cs/vektor/404-internetov%C3%A1-chybov%C3%A1-str%C3%A1nka-nebyla-nalezena-ve-svisl%C3%A9-orientaci-pro-str%C3%A1nku-prohl%C3%AD%C5%BEe%C4%8De.jpg?s=1024x1024&w=is&k=20&c=fuNIj51wyyQeYBRum0_2sHa9r_hiMVxJiupiaFcbdzM="
           }
           alt="show image"
         />
       </div>
       <div className="bloc__series-infos">
-        <h3>{serie?.show?.name}</h3>
-        <p>{serie?.show?.runtime || 0} min</p>
-        <p>{serie?.show?.rating?.average}</p>
+        <h3>{serie.show?.name}</h3>
+        <p>{serie.show?.runtime || 0} min</p>
+        <p>{serie.show?.rating?.average}</p>
         <p>{serieYear}</p>
         {isWatchList && summary ? (
           <div
@@ -78,10 +78,10 @@ export const Serie = ({
       {isWatchList ? null : !isMyList ? (
         <button
           className={
-            seriesIds?.includes(Number(serie?.show?.id) ?? 0) ? "inactive" : ""
+            seriesIds?.includes(Number(serie.show?.id) ?? 0) ? "inactive" : ""
           }
           onClick={addSerieToMyList}
-          disabled={seriesIds?.includes(Number(serie?.show?.id) ?? 0)}
+          disabled={seriesIds?.includes(Number(serie.show?.id) ?? 0)}
         >
           Ajouter à ma liste
         </button>

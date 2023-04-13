@@ -6,10 +6,11 @@ type SerieToWatchProps = {
   myListIds: SerieIds[];
 };
 
-export const SerieToWatch = ({ myListIds = [] }: SerieToWatchProps) => {
-  const selectedSeries = myListIds
-    ?.filter((serie) => serie.selected)
-    .map((selectedSerie) => selectedSerie.id);
+export const SerieToWatch = ({ myListIds }: SerieToWatchProps) => {
+  const selectedSeries =
+    myListIds
+      ?.filter((serie) => serie.selected)
+      .map((selectedSerie) => selectedSerie?.id) || [];
   const [randomSerieIndex, setRandomSerieIndex] = useState(
     Math.floor(Math.random() * selectedSeries?.length)
   );
