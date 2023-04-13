@@ -15,6 +15,9 @@ export const SerieToWatch = ({ myListIds }: SerieToWatchProps) => {
     Math.floor(Math.random() * selectedSeries?.length)
   );
   const randomSerieId = selectedSeries[randomSerieIndex] || selectedSeries[0];
+  /**
+   * After page refresh the cache is empty so we don't have a serieData
+   */
   const serieData = getSerieQueryData(randomSerieId);
 
   const randomizeIndex = () => {
