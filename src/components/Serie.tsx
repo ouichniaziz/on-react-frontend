@@ -1,5 +1,5 @@
 type SerieProps = {
-  serie: Serie;
+  serie: Serie | undefined;
   setMyListIds?: React.Dispatch<React.SetStateAction<SerieIds[] | undefined>>;
   myListIds?: SerieIds[];
   isMyList?: boolean;
@@ -22,7 +22,7 @@ export const Serie = ({
    * Todo: fix any
    */
   const summary: any = {
-    __html: serie.show?.summary,
+    __html: serie?.show?.summary,
   };
 
   /**

@@ -12,7 +12,7 @@ export const SeriesList = ({
 }: SerieListProps) => {
   const seriesIds = myListIds.map((serie) => serie.id);
   const seriesQueries = getSeriesQueries(seriesIds);
-  const seriesQueriesData = seriesQueries.map((serie: any) => ({
+  const seriesQueriesData = seriesQueries.map((serie) => ({
     show: serie.data,
   }));
 
@@ -33,7 +33,7 @@ export const SeriesList = ({
       {seriesQueriesData
         ? seriesQueriesData.map((serie) => (
             <Serie
-              key={serie?.show?.id}
+              key={serie.show?.id}
               serie={serie}
               myListIds={myListIds}
               setMyListIds={setMyListIds}
