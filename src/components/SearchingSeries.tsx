@@ -1,10 +1,11 @@
 import { UseQueryResult } from "@tanstack/react-query";
 import LoadingSpinner from "./ui/LoaderSpinner";
+import { Serie as SerieType, SerieIds } from "../types";
 import { Serie } from "./Serie";
 
 type SearchingSeriesProps = {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
-  searchSeriesQuery: UseQueryResult<Serie[], unknown>;
+  searchSeriesQuery: UseQueryResult<SerieType[], unknown>;
   search: string;
   myListIds: SerieIds[];
   setMyListIds: React.Dispatch<React.SetStateAction<SerieIds[] | undefined>>;
