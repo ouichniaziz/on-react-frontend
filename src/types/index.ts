@@ -1,4 +1,4 @@
-type SerieShow = {
+export type SerieShow = {
   id: number;
   url: string;
   name: string;
@@ -52,12 +52,12 @@ type SerieShow = {
   };
 };
 
-type Serie = {
+export type Serie = {
   score?: number;
   show?: SerieShow;
 };
 
-type SerieIds = {
+export type SerieIds = {
   id: number;
   selected: boolean;
 };
