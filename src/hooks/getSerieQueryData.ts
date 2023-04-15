@@ -1,4 +1,5 @@
 import { useQueryClient } from "@tanstack/react-query";
+import { SerieShow } from "../types";
 export const getSerieQueryData = (id: number) => {
   const queryClient = useQueryClient();
 

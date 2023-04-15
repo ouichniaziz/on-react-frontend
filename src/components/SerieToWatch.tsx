@@ -1,6 +1,7 @@
 import { Serie } from "./Serie";
 import { getSerieQueryData } from "../hooks/getSerieQueryData";
 import { useState } from "react";
+import { SerieIds } from "../types";
 
 type SerieToWatchProps = {
   myListIds: SerieIds[];

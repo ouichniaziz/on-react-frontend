@@ -1,4 +1,5 @@
 import { useQueries } from "@tanstack/react-query";
+import { SerieShow } from "../types";
 
 export const getSerie = async (id: number): Promise<SerieShow> => {
   const res = await fetch(`https://api.tvmaze.com/shows/${id}`);

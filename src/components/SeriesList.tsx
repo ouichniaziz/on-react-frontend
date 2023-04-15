@@ -1,5 +1,6 @@
 import { Serie } from "./Serie";
 import { getSeriesQueries } from "../hooks/getSeriesQueries";
+import { SerieIds } from "../types";
 
 type SerieListProps = {
   myListIds: SerieIds[];

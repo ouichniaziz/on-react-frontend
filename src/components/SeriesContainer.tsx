@@ -4,6 +4,7 @@ import SearchingSeries from "./SearchingSeries";
 import { SeriesList } from "./SeriesList";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { SerieToWatch } from "./SerieToWatch";
+import { SerieIds } from "../types";
 
 export const SeriesContainer = () => {
   const [search, setSearch] = useState("");

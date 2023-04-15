@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { delay } from "../helpers/delay";
+import { Serie } from "../types";
 
 const getSeriesSearch = async (search: string): Promise<Serie[]> => {
   const res = await fetch(`https://api.tvmaze.com/search/shows?q=${search}`);

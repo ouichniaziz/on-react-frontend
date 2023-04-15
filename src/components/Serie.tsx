@@ -1,5 +1,7 @@
+import { Serie as SerieType, SerieIds } from "../types";
+
 type SerieProps = {
-  serie: Serie;
+  serie: SerieType;
   setMyListIds?: React.Dispatch<React.SetStateAction<SerieIds[] | undefined>>;
   myListIds?: SerieIds[];
   isMyList?: boolean;
